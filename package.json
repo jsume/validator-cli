@@ -1,0 +1,47 @@
+{
+  "name": "@jsume/validator",
+  "version": "0.0.0",
+  "description": "validate your jsume json file",
+  "keywords": [],
+  "homepage": "https://github.com/jsume/validator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsume/validator.git"
+  },
+  "license": "MIT",
+  "author": "Moozon <muzhenweizh@gmail.com>",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "module": "./dist/index.mjs",
+  "script": {
+    "dev": "",
+    "build": "",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "release": "bumpp && npm publish"
+  },
+  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.11.0",
+    "eslint": "^9.23.0",
+    "tsup": "^8.4.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
