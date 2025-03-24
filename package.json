@@ -1,16 +1,18 @@
 {
-  "name": "@jsume/validator",
+  "name": "@jsume/validator-cli",
+  "type": "module",
   "version": "0.0.0",
+  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
   "description": "validate your jsume json file",
-  "keywords": [],
-  "homepage": "https://github.com/jsume/validator#readme",
+  "author": "Moozon <muzhenweizh@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/jsume/validator-cli#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsume/validator.git"
+    "url": "git+https://github.com/jsume/validator-cli.git"
   },
-  "license": "MIT",
-  "author": "Moozon <muzhenweizh@gmail.com>",
-  "type": "module",
+  "keywords": [],
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -18,26 +20,34 @@
     }
   },
   "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "jsmvld": "./dist/cli.js"
+  },
   "files": [
     "dist"
   ],
-  "sideEffects": false,
-  "module": "./dist/index.mjs",
   "script": {
-    "dev": "",
-    "build": "",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp && npm publish"
   },
-  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af",
+  "dependencies": {
+    "@jsume/schema": "^0.0.4",
+    "cac": "^6.7.14"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
+    "@types/node": "^22.13.13",
     "eslint": "^9.23.0",
-    "tsup": "^8.4.0"
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
